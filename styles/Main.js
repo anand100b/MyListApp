@@ -1,25 +1,50 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet,Platform} from 'react-native';
 import {colors} from './Colors';
 
-export const itemStyles = StyleSheet.create({
-  item : {
+export const styles = StyleSheet.create({
+  main: {
+    paddingHorizontal: 10,
+    // using Platform module: if android, add 25 to clear the status bar
+    paddingTop: Platform.OS == 'android' ? 25 : 0,
+  },
+  input: {
+    width: '100%',
     padding: 10,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    borderColor: colors.primary,
+    borderWidth: 1,
+    marginVertical: 15,
   },
-  text: {
-    fontSize: 16,
-    color: 'black'
+  buttonView: {
+    paddingHorizontal: 10,
   },
-  row: {
-    flexDirection: 'row',
+  button: {
+    padding: 15,
+    backgroundColor: colors.primary,
+    marginVertical: 15,
+  },
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
+  },
+  buttonDisabled: {
+    padding: 15,
+    backgroundColor: colors.primaryDisabled,
+    marginVertical: 15,
+  },
+  listView: {
     flex: 1,
-    justifyContent: 'space-between',
-    paddingRight: 10,
   },
-  icon: {
-    width: 20,
-    height: 20,
+  toast: {
+    backgroundColor: 'black',
+    position: 'absolute',
+    bottom: 20,
+    left: 20,
+    right: 20,
+    padding: 5,
+    borderRadius: 5,
+  },
+  toastMessage: {
+    color: 'white',
+    textAlign: 'center',
   },
 })
